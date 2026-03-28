@@ -3,7 +3,7 @@
 A Java Swing GUI application for managing port operations, integrated with a MySQL database.
 
 ## Features
-- **Administrative Login:** Access for authorized personnel (demo uses hardcoded credentials in `Portm.java`). Note: This implementation is for demonstration purposes and is not production-secure.
+- **Administrative Login:** Access for authorized personnel (demo uses hardcoded credentials `admin`/`password` in `Portm/src/portm/Portm.java`). Note: This implementation is for demonstration purposes and is not production-secure.
 - **Customer Management:** Full CRUD (Create, Read, Update, Delete) operations for customer profiles.
 - **Shipping Logistics:** Manage import and export records, specifying item details, container types, and origin/destination countries (Ethiopia, India, USA, UK, China, Taiwan, Germany, Kenya).
 - **Automated Billing:**
@@ -21,6 +21,7 @@ A Java Swing GUI application for managing port operations, integrated with a MyS
 1. **Database Setup:**
    - Create a MySQL database named `port`.
    - Execute the `port.sql` script located in the root directory to initialize tables (`Customer`, `Item`, `cost`) and views (`item_cost`, `item_buyer`).
+   - **Note:** The `port.sql` script has been updated to include the `address` and `email` columns in the `Customer` table, which are required for runtime queries in `Portm.java`. Ensure you run this version of the script before starting the application.
 2. **Connection Configuration:**
    - **Development Only:** The application connects to MySQL at `localhost` with the default username `root` and password `password`.
    - **Hardening:** For any non-local deployment, change these credentials in `Portm/src/portm/Portm.java`. It is strongly advised to:
