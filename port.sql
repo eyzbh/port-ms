@@ -13,6 +13,8 @@ create table Customer (
        cid int auto_increment primary key,
        firstname varchar (50),
        lastname varchar (50),
+       address varchar (100),
+       email varchar (100),
        phonenumber varchar(10)
 );
 
@@ -59,8 +61,8 @@ alter table Item
 add constraint fk_cost
 foreign key (price) references cost (coid);
 
-insert into customer (firstname, lastname, phonenumber) values
-('Abebe', 'Balcha', '0909090909');
+insert into customer (firstname, lastname, address, email, phonenumber) values
+('Abebe', 'Balcha', 'Addis Ababa', 'abebe@example.com', '0909090909');
 
 select * from customer;
 
